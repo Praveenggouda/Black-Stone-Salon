@@ -1,0 +1,1400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Stone Salon & Spa | Luxury Wellness</title>
+<meta name="description" content="Discover relaxation at Black Stone Salon & Spa, Kadugodi, Bengaluru. Massage, facials, body treatments and more. Book your spa experience today.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#111311;
+  --bg2:#191b18;
+  --card:#20221e;
+  --gold:#c6a67a;
+  --gold2:#dfc6a2;
+  --white:#f5f1e9;
+  --muted:#aaa69d;
+  --line:rgba(255,255,255,.10);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+button{font-family:inherit;cursor:pointer}
+.container{width:min(1180px,90%);margin:auto}
+.section{padding:100px 0}
+.gold{color:var(--gold)}
+.small-label{
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:11px;
+  color:var(--gold);
+  font-weight:600;
+}
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  line-height:1.15;
+}
+h2{font-size:clamp(36px,5vw,56px)}
+p{color:var(--muted)}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:15px 24px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.5px;
+  transition:.35s ease;
+}
+.btn-gold{
+  background:var(--gold);
+  color:#151512;
+  position:relative;
+  overflow:hidden;
+}
+.btn-gold::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:80%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+  transition:.6s;
+}
+.btn-gold:hover::before{left:120%}
+.btn-gold:hover{
+  background:var(--gold2);
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(198,166,122,.22);
+}
+.btn-outline{
+  border:1px solid rgba(255,255,255,.3);
+  color:var(--white);
+  transition:.3s;
+}
+.btn-outline:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  transform:translateY(-3px);
+}
+
+/* ANIMATIONS */
+
+@keyframes heroReveal{
+  from{opacity:0;transform:translateY(35px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes floatElement{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+
+@keyframes glow{
+  0%,100%{box-shadow:0 0 0 rgba(198,166,122,0)}
+  50%{box-shadow:0 0 20px rgba(198,166,122,.18)}
+}
+
+.hero-content > *{
+  animation:heroReveal .9s ease both;
+}
+.hero-content .small-label{animation-delay:.1s}
+.hero-content h1{animation-delay:.25s}
+.hero-content p{animation-delay:.4s}
+.hero-buttons{animation:heroReveal .9s .55s ease both}
+.hero-note{animation:heroReveal .9s .7s ease both}
+
+/* NAV */
+
+nav{
+  height:82px;
+  display:flex;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(17,19,17,.95);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:min(1180px,90%);
+  margin:auto;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-mark{
+  width:40px;
+  height:40px;
+  border:1px solid var(--gold);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:20px;
+  transition:.4s;
+}
+.logo:hover .logo-mark{
+  background:var(--gold);
+  color:var(--bg);
+  transform:rotate(-5deg);
+}
+.logo-text{
+  font-family:'Playfair Display',serif;
+  letter-spacing:1px;
+  font-size:19px;
+}
+.logo-text small{
+  display:block;
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  letter-spacing:4px;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
+.nav-links a{
+  font-size:12px;
+  color:#d1cec6;
+  transition:.2s;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{padding:12px 18px;font-size:12px}
+.menu-btn{
+  display:none;
+  color:var(--white);
+  background:none;
+  border:0;
+  font-size:26px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:720px;
+  height:calc(100vh - 82px);
+  max-height:900px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(12,13,12,.95) 0%,rgba(12,13,12,.70) 45%,rgba(12,13,12,.15) 100%),
+    url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=85')
+    center/cover;
+}
+.hero-content{max-width:680px}
+.hero .small-label{margin-bottom:25px}
+.hero h1{
+  font-size:clamp(52px,8vw,100px);
+  letter-spacing:-1.5px;
+  margin-bottom:25px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  max-width:500px;
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:35px;
+}
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
+.hero-note{
+  margin-top:60px;
+  display:flex;
+  gap:35px;
+  flex-wrap:wrap;
+}
+.hero-note div{display:flex;align-items:center;gap:10px}
+.hero-note strong{color:var(--gold);font-size:16px}
+.hero-note span{font-size:12px;color:#c7c2b9}
+
+/* TRUST */
+
+.trust{
+  background:#1b1d19;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:27px 0;
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.trust-item{
+  text-align:center;
+  border-right:1px solid var(--line);
+}
+.trust-item:last-child{border:none}
+.trust-item strong{
+  display:block;
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:var(--gold);
+}
+.trust-item span{font-size:11px;color:var(--muted);letter-spacing:1px}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.about-images{
+  position:relative;
+  padding:0 35px 35px 0;
+}
+.about-main{height:520px}
+.about-main img{height:100%}
+.about-small{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:48%;
+  height:220px;
+  border:8px solid var(--bg);
+}
+.about-small img{height:100%}
+.about-content .small-label{margin-bottom:20px}
+.about-content h2{margin-bottom:25px}
+.about-content p{
+  font-size:14px;
+  line-height:2;
+  margin-bottom:20px;
+}
+.about-content .btn{margin-top:10px}
+
+/* SERVICES */
+
+.services{background:var(--bg2)}
+.section-head{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 55px;
+}
+.section-head .small-label{margin-bottom:20px}
+.section-head p{margin-top:20px;font-size:14px}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.service-card{
+  background:#22241f;
+  border:1px solid rgba(255,255,255,.05);
+  transition:transform .4s ease,border .4s ease,box-shadow .4s ease;
+  overflow:hidden;
+}
+.service-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(198,166,122,.4);
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+.service-image{
+  height:270px;
+  position:relative;
+  overflow:hidden;
+}
+.service-image img{
+  height:100%;
+  transition:transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.service-card:hover .service-image img{transform:scale(1.08)}
+.service-tag{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  background:var(--gold);
+  color:#111;
+  font-size:10px;
+  letter-spacing:1px;
+  padding:8px 12px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+.service-card:hover .service-tag{
+  background:var(--white);
+  color:#171714;
+}
+.service-info{padding:25px}
+.service-info h3{
+  font-size:26px;
+  margin-bottom:12px;
+  transition:.3s;
+}
+.service-card:hover h3{color:var(--gold)}
+.service-info p{
+  font-size:13px;
+  line-height:1.8;
+  min-height:75px;
+}
+
+/* BOOK NOW TREATMENT BUTTON */
+
+.service-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 20px;
+  margin-top:20px;
+  background:var(--gold);
+  color:#171714;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:1px;
+  border:none;
+  transition:.35s ease;
+}
+.service-link:hover{
+  background:var(--gold2);
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(198,166,122,.2);
+}
+
+.all-services{
+  text-align:center;
+  margin-top:45px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+  position:relative;
+  padding:120px 0;
+  background:
+    linear-gradient(rgba(13,15,13,.82),rgba(13,15,13,.85)),
+    url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=85')
+    center/cover fixed;
+}
+.experience-content{
+  max-width:750px;
+  text-align:center;
+  margin:auto;
+}
+.experience h2{margin:20px 0}
+.experience p{
+  max-width:650px;
+  margin:25px auto;
+  line-height:2;
+  font-size:14px;
+}
+
+/* SPECIAL EXPERIENCES */
+
+.special-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+.special-card{
+  min-height:420px;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:flex-end;
+  transition:transform .4s;
+  overflow:hidden;
+}
+.special-card:hover{transform:translateY(-5px)}
+.special-card:first-child{
+  background-image:
+    linear-gradient(0deg,rgba(0,0,0,.85),transparent 80%),
+    url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=85');
+}
+.special-card:last-child{
+  background-image:
+    linear-gradient(0deg,rgba(0,0,0,.85),transparent 80%),
+    url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1000&q=85');
+}
+.special-content{padding:35px}
+.special-content h3{font-size:36px;margin:15px 0}
+.special-content p{font-size:13px;max-width:400px;margin-bottom:20px}
+
+/* REVIEWS */
+
+.reviews{background:var(--bg2)}
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.review-card{
+  background:#242620;
+  padding:35px;
+  border:1px solid var(--line);
+  transition:transform .35s,border-color .35s;
+}
+.review-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(198,166,122,.4);
+}
+.stars{
+  color:var(--gold);
+  letter-spacing:3px;
+}
+.review-card p{
+  font-size:14px;
+  line-height:1.9;
+  margin:20px 0;
+  color:#e1ddd5;
+}
+.review-card h4{font-size:12px;font-weight:600}
+.review-card small{color:var(--muted)}
+.review-card .quote{
+  font-family:'Playfair Display',serif;
+  font-size:40px;
+  color:var(--gold);
+  line-height:1;
+}
+
+/* BOOKING */
+
+.booking{padding:100px 0}
+.booking-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.booking-content h2{margin:20px 0}
+.booking-content p{
+  line-height:2;
+  font-size:14px;
+  margin-bottom:30px;
+}
+.contact-details{margin-top:35px}
+.contact-details div{
+  display:flex;
+  gap:15px;
+  margin:20px 0;
+  font-size:13px;
+}
+.contact-details .icon{color:var(--gold);width:22px}
+.booking-image{height:520px}
+.booking-image img{height:100%}
+
+/* LOCATION */
+
+.location{
+  background:var(--bg2);
+  padding:80px 0;
+}
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.location h2{margin:20px 0}
+.location p{
+  line-height:1.9;
+  font-size:14px;
+  margin-bottom:25px;
+}
+.map-frame{
+  width:100%;
+  height:380px;
+  border:0;
+  filter:grayscale(100%) invert(90%);
+}
+
+/* FOOTER */
+
+footer{
+  padding:60px 0 30px;
+  border-top:1px solid var(--line);
+}
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.footer-text{
+  max-width:380px;
+  margin-top:20px;
+  font-size:13px;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:12px;
+  color:var(--muted);
+  transition:.3s;
+}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  margin-top:40px;
+  padding-top:25px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  z-index:200;
+  background:#25D366;
+  color:#fff;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 5px 25px rgba(0,0,0,.3);
+  font-size:25px;
+  transition:.3s;
+}
+.whatsapp-float:hover{transform:scale(1.12)}
+
+/* SCROLL REVEAL */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* STAGGER EFFECTS */
+
+.service-card.reveal:nth-child(2){transition-delay:.1s}
+.service-card.reveal:nth-child(3){transition-delay:.2s}
+.service-card.reveal:nth-child(4){transition-delay:.1s}
+.service-card.reveal:nth-child(5){transition-delay:.2s}
+.service-card.reveal:nth-child(6){transition-delay:.3s}
+
+/* MOBILE */
+
+.mobile-bottom{display:none}
+
+@media(max-width:900px){
+  .nav-links{gap:18px}
+  .about-grid{gap:40px}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .review-grid{grid-template-columns:1fr}
+  .review-card{padding:25px}
+  .booking-grid{gap:30px}
+}
+
+@media(max-width:700px){
+  .section{padding:75px 0}
+  nav{height:70px}
+  .logo-text{font-size:17px}
+  .nav-cta{display:none}
+  .menu-btn{display:block}
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    display:none;
+    background:#171917;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:15px 5%;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-links.active{display:flex}
+  .nav-links a{
+    padding:15px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .hero{
+    height:auto;
+    min-height:700px;
+    max-height:none;
+    background:
+      linear-gradient(0deg,rgba(12,13,12,.94) 0%,rgba(12,13,12,.55) 100%),
+      url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85')
+      center/cover;
+  }
+  .hero-content{padding:90px 0}
+  .hero h1{font-size:58px}
+  .hero p{font-size:14px}
+  .hero-note{margin-top:40px;gap:20px}
+  .hero-note strong{font-size:14px}
+  .hero-note span{font-size:10px}
+
+  .trust-grid{grid-template-columns:repeat(2,1fr);gap:25px}
+  .trust-item:nth-child(2){border-right:none}
+  .trust-item strong{font-size:24px}
+
+  .about-grid{grid-template-columns:1fr;gap:50px}
+  .about-main{height:400px}
+  .about-small{height:180px}
+  .about-content h2{font-size:42px}
+
+  .service-grid{grid-template-columns:1fr}
+  .service-image{height:300px}
+  .service-info p{min-height:auto}
+
+  .experience{
+    background-attachment:scroll;
+    padding:85px 0;
+  }
+  .experience h2{font-size:42px}
+
+  .special-grid{grid-template-columns:1fr}
+  .special-card{min-height:350px}
+  .special-content h3{font-size:32px}
+
+  .booking-grid{grid-template-columns:1fr}
+  .booking-image{height:380px}
+  .booking-content h2{font-size:42px}
+
+  .location-grid{grid-template-columns:1fr}
+  .map-frame{height:300px}
+
+  .footer-top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-links{gap:20px}
+  .footer-bottom{flex-direction:column}
+
+  .whatsapp-float{display:none}
+
+  .mobile-bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:300;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#181a17;
+    border-top:1px solid rgba(198,166,122,.3);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+  .mobile-bottom a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 10px;
+    font-size:12px;
+    font-weight:600;
+  }
+  .mobile-bottom .call{
+    border:1px solid rgba(255,255,255,.2);
+  }
+  .mobile-bottom .book{
+    background:var(--gold);
+    color:#111;
+  }
+  body{padding-bottom:80px}
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <div class="nav-inner">
+
+    <a href="#home" class="logo">
+      <div class="logo-mark">BS</div>
+      <div class="logo-text">
+        BLACK STONE
+        <small>SALON & SPA</small>
+      </div>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Treatments</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
+    </div>
+
+    <a href="https://wa.me/8904008384?text=Hello%20Black%20Stone%20Salon%20%26%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
+       class="btn btn-gold nav-cta" target="_blank">
+      BOOK YOUR EXPERIENCE ↗
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="small-label">A sanctuary of wellness & beauty</div>
+
+      <h1>Escape.<br>Relax.<br><span>Renew.</span></h1>
+
+      <p>
+        Step away from the everyday and discover a world of relaxation.
+        Experience thoughtful treatments, peaceful moments and care
+        designed to help you feel your best.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment."
+           class="btn btn-gold" target="_blank">
+          BOOK AN APPOINTMENT ↗
+        </a>
+
+        <a href="#services" class="btn btn-outline">
+          EXPLORE TREATMENTS
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <div><strong>4.8 ★</strong><span>Customer Rating</span></div>
+        <div><strong>204+</strong><span>Google Reviews</span></div>
+        <div><strong>Relax</strong><span>Restore & Rejuvenate</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        <strong>4.8/5</strong>
+        <span>GOOGLE RATING</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>204+</strong>
+        <span>HAPPY REVIEWS</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>Premium</strong>
+        <span>SPA EXPERIENCE</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>Personal</strong>
+        <span>CARE & ATTENTION</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-images">
+        <div class="about-main">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85"
+               alt="Relaxing spa treatment">
+        </div>
+
+        <div class="about-small">
+          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=600&q=85"
+               alt="Spa relaxation">
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="small-label">Welcome to Black Stone</div>
+
+        <h2>Your moment of <span class="gold">peace.</span></h2>
+
+        <p>
+          At Black Stone Salon & Spa, relaxation is more than a treatment.
+          It's a moment to pause, recharge and reconnect with yourself.
+        </p>
+
+        <p>
+          From soothing massage therapies to refreshing facial treatments,
+          our experiences are designed to bring comfort, care and
+          relaxation into your day.
+        </p>
+
+        <p>
+          Discover a calm space where attentive service and wellness
+          come together.
+        </p>
+
+        <a href="#services" class="btn btn-outline">
+          DISCOVER OUR TREATMENTS
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="section services" id="services">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small-label">Our treatments</div>
+      <h2>Moments of <span class="gold">wellness.</span></h2>
+      <p>
+        Explore experiences designed to help you relax, refresh
+        and feel renewed.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <!-- MASSAGE -->
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=85"
+               alt="Relaxing massage">
+          <div class="service-tag">Relax & Restore</div>
+        </div>
+
+        <div class="service-info">
+          <h3>Massage Therapy</h3>
+          <p>
+            Relaxing massage experiences designed to help ease tension
+            and provide a peaceful escape.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Massage%20Therapy%20appointment."
+             class="service-link" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- FACIAL -->
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85"
+               alt="Facial treatment">
+          <div class="service-tag">Skin Care</div>
+        </div>
+
+        <div class="service-info">
+          <h3>Facial Treatments</h3>
+          <p>
+            Refresh your skin with facial experiences focused on
+            care, hydration and a radiant appearance.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Facial%20Treatment."
+             class="service-link" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- OIL -->
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85"
+               alt="Oil spa treatment">
+          <div class="service-tag">Natural Relaxation</div>
+        </div>
+
+        <div class="service-info">
+          <h3>Oil Treatments</h3>
+          <p>
+            Indulge in soothing oil-based spa experiences
+            for a calming and relaxing moment.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20an%20Oil%20Treatment."
+             class="service-link" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- BODY WRAPS -->
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"
+               alt="Body spa treatment">
+          <div class="service-tag">Body Care</div>
+        </div>
+
+        <div class="service-info">
+          <h3>Body Wraps</h3>
+          <p>
+            Give yourself time to unwind with body care treatments
+            and indulgent spa rituals.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Body%20Wrap%20treatment."
+             class="service-link" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- WAXING -->
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85"
+               alt="Beauty waxing">
+          <div class="service-tag">Beauty Care</div>
+        </div>
+
+        <div class="service-info">
+          <h3>Body Waxing</h3>
+          <p>
+            Beauty and grooming services designed to complement
+            your personal care routine.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Body%20Waxing%20appointment."
+             class="service-link" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- MAKEOVER -->
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37d?auto=format&fit=crop&w=900&q=85"
+               alt="Beauty makeover">
+          <div class="service-tag">Beauty & Style</div>
+        </div>
+
+        <div class="service-info">
+          <h3>Makeovers</h3>
+          <p>
+            Explore beauty services to refresh your appearance
+            and enjoy a little self-care.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Makeover."
+             class="service-link" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="all-services">
+      <a href="https://wa.me/8904008384?text=Hello%2C%20please%20share%20the%20complete%20spa%20services%20and%20prices."
+         class="btn btn-gold" target="_blank">
+        BOOK YOUR SPA EXPERIENCE ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="experience">
+  <div class="container">
+    <div class="experience-content">
+
+      <div class="small-label">The Black Stone Experience</div>
+
+      <h2>Make time for <span class="gold">yourself.</span></h2>
+
+      <p>
+        Life moves fast. Take a moment to slow down, breathe deeply
+        and enjoy an experience created around relaxation and care.
+        Whether it's a solo escape, a couples experience or a visit
+        with friends, make your time count.
+      </p>
+
+      <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20relaxing%20spa%20experience."
+         class="btn btn-gold" target="_blank">
+        BOOK YOUR EXPERIENCE ↗
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL EXPERIENCES -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small-label">Special moments</div>
+      <h2>Share the <span class="gold">relaxation.</span></h2>
+      <p>Beautiful experiences are even better when shared.</p>
+    </div>
+
+    <div class="special-grid">
+
+      <div class="special-card">
+        <div class="special-content">
+          <div class="small-label">Togetherness</div>
+          <h3>Couples Experience</h3>
+
+          <p>
+            Make time for each other with a relaxing spa experience
+            designed to enjoy together.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Couples%20Massage."
+             class="btn btn-gold" target="_blank">
+            BOOK NOW ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="special-card">
+        <div class="special-content">
+          <div class="small-label">Friends & Celebrations</div>
+          <h3>Group Bookings</h3>
+
+          <p>
+            Celebrate, unwind and create memorable moments
+            with a spa visit for your group.
+          </p>
+
+          <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Group%20Spa%20Visit."
+             class="btn btn-gold" target="_blank">
+            BOOK GROUP VISIT ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section reviews" id="reviews">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small-label">Customer experiences</div>
+      <h2>Words that <span class="gold">matter.</span></h2>
+      <p>A little care makes a lasting impression.</p>
+    </div>
+
+    <div class="review-grid">
+
+      <div class="review-card">
+        <div class="quote">“</div>
+        <div class="stars">★★★★★</div>
+        <p>
+          Service is good and staff also good and respect to all customers.
+        </p>
+        <h4>Happy Customer</h4>
+        <small>Google Review</small>
+      </div>
+
+      <div class="review-card">
+        <div class="quote">“</div>
+        <div class="stars">★★★★★</div>
+        <p>
+          Very professional, great experience. Jiya was very kind
+          and helpful.
+        </p>
+        <h4>Happy Customer</h4>
+        <small>Google Review</small>
+      </div>
+
+      <div class="review-card">
+        <div class="quote">“</div>
+        <div class="stars">★★★★★</div>
+        <p>
+          Best place for everything, value for money and very
+          responsible persons.
+        </p>
+        <h4>Happy Customer</h4>
+        <small>Google Review</small>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="https://www.google.com/search?q=Black+Stone+Salon+%26+Spa+Kadugodi+reviews"
+         target="_blank" class="btn btn-outline">
+        READ MORE REVIEWS ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="booking-grid">
+
+      <div class="booking-content">
+        <div class="small-label">Your wellness starts here</div>
+
+        <h2>Ready to <span class="gold">relax?</span></h2>
+
+        <p>
+          Take the first step towards a relaxing experience.
+          Contact us to explore our treatments and schedule
+          your appointment.
+        </p>
+
+        <a href="https://wa.me/8904008384?text=Hello%20Black%20Stone%20Salon%20%26%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
+           target="_blank" class="btn btn-gold">
+          BOOK VIA WHATSAPP ↗
+        </a>
+
+        <div class="contact-details">
+
+          <div>
+            <span class="icon">☎</span>
+            <span>+91 89040 08384</span>
+          </div>
+
+          <div>
+            <span class="icon">⌖</span>
+            <span>Kadugodi, Whitefield, Bengaluru</span>
+          </div>
+
+          <div>
+            <span class="icon">◷</span>
+            <span>10:30 AM – 9:00 PM</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="booking-image">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85"
+             alt="Luxury spa">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+
+<section class="location" id="location">
+  <div class="container">
+    <div class="location-grid">
+
+      <div>
+        <div class="small-label">Find us</div>
+
+        <h2>Visit <span class="gold">Black Stone.</span></h2>
+
+        <p>
+          2nd Floor, Apsara Arcade, Channasandra Main Road,
+          Near MVJ Engineering College, A K Gopalan Colony,
+          Kadugodi, Bengaluru, Karnataka 560067.
+        </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Black+Stone+Salon+and+Spa+Apsara+Arcade+Kadugodi+Bengaluru"
+           target="_blank" class="btn btn-gold">
+          GET DIRECTIONS ↗
+        </a>
+      </div>
+
+      <div>
+        <iframe
+          class="map-frame"
+          src="https://maps.google.com/maps?q=Apsara%20Arcade%20Channasandra%20Main%20Road%20Kadugodi%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          allowfullscreen
+          title="Black Stone Salon and Spa location">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+        <a href="#home" class="logo">
+          <div class="logo-mark">BS</div>
+
+          <div class="logo-text">
+            BLACK STONE
+            <small>SALON & SPA</small>
+          </div>
+        </a>
+
+        <p class="footer-text">
+          A place to unwind, recharge and rediscover
+          the beauty of relaxation.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Treatments</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+        <a href="https://wa.me/8904008384" target="_blank">WhatsApp</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Black Stone Salon & Spa. All rights reserved.</span>
+      <span>Relaxation. Care. Wellness.</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+
+<a href="https://wa.me/8904008384?text=Hello%20Black%20Stone%20Salon%20%26%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Book on WhatsApp">
+  ☎
+</a>
+
+<!-- MOBILE BOTTOM BAR -->
+
+<div class="mobile-bottom">
+  <a href="tel:+918904008384" class="call">☎ CALL NOW</a>
+
+  <a href="https://wa.me/8904008384?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment."
+     class="book" target="_blank">
+    BOOK NOW ↗
+  </a>
+</div>
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuBtn.textContent = '☰';
+  });
+});
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(
+  '.section-head, .about-images, .about-content, .service-card, .experience-content, .special-card, .review-card, .booking-content, .booking-image, .location-grid'
+);
+
+revealElements.forEach(element => {
+  element.classList.add('reveal');
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+revealElements.forEach(element => {
+  revealObserver.observe(element);
+});
+
+</script>
+
+</body>
+</html>
